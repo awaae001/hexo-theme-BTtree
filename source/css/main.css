@@ -1,4 +1,21 @@
 
+.article-meta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.76); /* 调整透明度和颜色 */
+    z-index: -1; /* 使蒙版在内容之上 */
+}
+
+.article-meta {
+    position: relative; /* 使 .article-meta 成为定位上下文，以便 .article-meta::before 相对其定位 */
+    /* 其他样式... */
+}
+
+
 * {
 	margin: 0;
 	padding: 0;

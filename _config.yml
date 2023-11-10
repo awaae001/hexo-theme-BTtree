@@ -78,6 +78,11 @@ sidebar:
   # usePostTitle 为 ture 用文章名，不填或为 false 用文件名
   usePostTitle: ture
 
+# 背景图片，仅支持URL
+blogBackgroundImage: 
+# 你可以根据需要选择 'cover', 'contain' 或其他值
+blogBackgroundSize: 'cover'  
+
 #页面底部的网站运行时长,注意：时间格式为 年-月-日，单数必须要要加零
 custom:
   enableRuntimeCard: ture
