@@ -1,6 +1,8 @@
 
 # Hexo 主题 Tree
 
+>本主题基于此魔改而来
+
 一个简洁的主题，主要功能是 “树状导航” + “树状目录”，可选配“评论”和“阅读量”功能，支持基于搜索引擎的全站搜索。通过 fancybox 支持图片点击放大。
 
 有问题欢迎及时 issues
@@ -10,6 +12,7 @@ Demo：[https://wujun234.com/](https://wujun234.com/)
 ![](source/Tree.png)
 
 # 下载主题
+
 
 下载主题到 `hexo` 根目录中 `themes` 目录下
 ```
