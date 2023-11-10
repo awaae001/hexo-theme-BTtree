@@ -3,35 +3,29 @@
 </h1>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Blog Title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Blog Title</title>
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            position: relative; /* 让 ::before 伪元素相对于 body 定位 */
-        }
+  <style>
+      body {
+          margin: 0;
+          padding: 0;
+          position: relative;
+      }
 
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1; /* 使伪元素在内容之后，避免遮挡 */
-            background-image: url('<%- theme.blogBackgroundImage %>');
-            background-size: <%- theme.blogBackgroundSize %>;
-            filter: blur(5px); /* 添加简单的模糊效果 */
-            /* 这里可以添加其他样式属性，例如透明度 background-color: rgba(255, 255, 255, 0.5); */
-        }
-
-        /* 其他样式... */
-    </style>
-
-    <!-- 其他 head 部分内容... -->
+      body::before {
+          content: "";
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+          background-image: url('<%- theme.blogBackgroundImage %>');
+          background-size: <%- theme.blogBackgroundSize %>;
+          filter: blur(<%- theme.blurAmount %>);
+  </style>
 </head>
 
 <!-- meta -->
