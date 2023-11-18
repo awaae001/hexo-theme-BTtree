@@ -1,5 +1,5 @@
 <h1 id="article-title">
-	<%- page.title || page.slug.split("/")[page.slug.split("/").length-1] %>
+  <%- page.title || page.slug.split("/")[page.slug.split("/").length-1] %>
 </h1>
 
 <head>
@@ -8,171 +8,257 @@
   <title>Your Blog Title</title>
 
   <style>
-      body {
-          margin: 0;
-          padding: 0;
-          position: relative;
-      }
+    body {
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
 
-      body::before {
-          content: "";
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: -1;
-          background-image: url('<%- theme.blogBackgroundImage %>');
-          background-size: <%- theme.blogBackgroundSize %>;
-          filter: blur(<%- theme.blurAmount %>);
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-image: url('<%- theme.blogBackgroundImage %>');
+      background-size: <%- theme.blogBackgroundSize %>;
+      filter: blur(<%- theme.blurAmount %>);
   </style>
 </head>
 
 <!-- meta -->
 <div class="article-meta">
-	<% if (theme.valine && theme.valine.enableCounter){ %>
-		<span>
-			阅读量:<span id="<%= url_for(page.path) %>" class="leancloud_visitors" data-flag-title="<%- page.title %>"></span>
-		</span>
-	<% } %>
+  <% if (theme.valine && theme.valine.enableCounter){ %>
+    <span>
+      阅读量:<span id="<%= url_for(page.path) %>" class="leancloud_visitors" data-flag-title="<%- page.title %>"></span>
+    </span>
+    <% } %>
 
-	<span><%- config.author %></span>
-	<span><%- date(page.date, "YYYY-MM-DD HH:mm:ss") %></span>
+      <span><%- config.author %></span>
+      <span><%- date(page.date, "YYYY-MM-DD HH:mm:ss" ) %></span>
 
-  <div id="article-categories">
-    <% if (page.categories) { %>
-		  <span>Categories：</span>
-      <% for (var j=0; j < page.categories.data.length; j++) { %>
-          <% if (page.categories.data[j] && page.categories.data[j].name) { %>
+      <div id="article-categories">
+        <% if (page.categories) { %>
+          <span>Categories：</span>
+          <% for (var j=0; j < page.categories.data.length; j++) { %>
+            <% if (page.categories.data[j] && page.categories.data[j].name) { %>
               <span>
-                  <i class="fa fa-folder" aria-hidden="true">
+                <i class="fa fa-folder" aria-hidden="true">
                   <a href="/<%- page.categories.data[j].path %>"><%- page.categories.data[j].name %></a>
-                  </i>
+                </i>
                 <% if (j < page.categories.data.length - 1) { %>
                   >
-                <% } %>
+                  <% } %>
               </span>
-          <% } %>
-      <% } %>
-    <% } %>
+              <% } %>
+                <% } %>
+                  <% } %>
 
-    <% if (page.tags) { %>
-		    <span>Tags：</span>
-        <% for (var j=0; j < page.tags.data.length; j++) { %>
-            <% if (page.tags.data[j] && page.tags.data[j].name) { %>
-                <span>
-                    <i class="fa fa-tag" aria-hidden="true">
-                    <a href="/<%- page.tags.data[j].path %>"><%- page.tags.data[j].name %></a>
-                    </i>
-                </span>
-            <% } %>
-        <% } %>
-    <% } %>
-  </div>
+                    <% if (page.tags) { %>
+                      <span>Tags：</span>
+                      <% for (var j=0; j < page.tags.data.length; j++) { %>
+                        <% if (page.tags.data[j] && page.tags.data[j].name) { %>
+                          <span>
+                            <i class="fa fa-tag" aria-hidden="true">
+                              <a href="/<%- page.tags.data[j].path %>"><%- page.tags.data[j].name %></a>
+                            </i>
+                          </span>
+                          <% } %>
+                            <% } %>
+                              <% } %>
+      </div>
 
 </div>
 
 <!-- content -->
 <div id="article-content">
-	<%- page.content %>
+  <%- page.content %>
 </div>
 
 <!-- post-guide -->
 <% if (is_post()){ %>
-    <div class="post-guide">
-        <div class="item left">
-            <% if (page.prev){ %>
-              <a href="<%- url_for(page.prev.path) %>">
-                  <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  <%- page.prev.title || page.prev.slug.split("/")[page.prev.slug.split("/").length-1] %>
-              </a>
-            <% } %>
-        </div>
-        <div class="item right">
-            <% if (page.next){ %>
-              <a href="<%- url_for(page.next.path) %>">
-                <%- page.next.title || page.next.slug.split("/")[page.prev.slug.split("/").length-1] %>
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-              </a>
-            <% } %>
-        </div>
+  <div class="post-guide">
+    <div class="item left">
+      <% if (page.prev){ %>
+        <a href="<%- url_for(page.prev.path) %>">
+          <i class="fa fa-angle-left" aria-hidden="true"></i>
+          <%- page.prev.title || page.prev.slug.split("/")[page.prev.slug.split("/").length-1] %>
+        </a>
+        <% } %>
     </div>
-<% } %>
+    <div class="item right">
+      <% if (page.next){ %>
+        <a href="<%- url_for(page.next.path) %>">
+          <%- page.next.title || page.next.slug.split("/")[page.prev.slug.split("/").length-1] %>
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </a>
+        <% } %>
+    </div>
+  </div>
+  <% } %>
 
-<!-- comment - giscus -->
-<% if(theme.giscus && theme.giscus.enable) { %>
-  <meta property="og:title" content="<%= page.title || page.path %>"/>
+    <!-- comment - giscus -->
+    <% if(theme.giscus && theme.giscus.enable) { %>
+      <meta property="og:title" content="<%= page.title || page.path %>" />
 
-  <script src="https://giscus.app/client.js"
-          data-repo="<%=theme.giscus.repo %>"
-          data-repo-id="<%=theme.giscus.repo_id %>"
-          data-category="Announcements"
-          data-category-id="<%=theme.giscus.category_id %>"
-          data-mapping="og:title"
-          data-strict="1"
-          data-reactions-enabled="1"
-          data-emit-metadata="0"
-          data-input-position="<%=theme.giscus.input_position%>"
-          data-theme="<%=theme.giscus.theme%>"
-          data-lang="<%=theme.giscus.lang%>"
-          data-loading="lazy"
-          crossorigin="anonymous"
-          async>
-  </script>
-<% } %>
+      <script src="https://giscus.app/client.js" data-repo="<%=theme.giscus.repo %>"
+        data-repo-id="<%=theme.giscus.repo_id %>" data-category="Announcements"
+        data-category-id="<%=theme.giscus.category_id %>" data-mapping="og:title" data-strict="1"
+        data-reactions-enabled="1" data-emit-metadata="0" data-input-position="<%=theme.giscus.input_position%>"
+        data-theme="<%=theme.giscus.theme%>" data-lang="<%=theme.giscus.lang%>" data-loading="lazy"
+        crossorigin="anonymous" async>
+        </script>
+      <% } %>
 
-<!-- comment - valine -->
-<% if (theme.valine && theme.valine.enableComment){ %>
-	<div id="vcomments"></div>
-<% } %>
+        <!-- comment - valine -->
+        <% if (theme.valine && theme.valine.enableComment){ %>
+          <div id="vcomments"></div>
+          <% } %>
 
-<script>
-	<% if (theme.valine && theme.valine.enableComment){ %>
-		// 评论
-		new Valine({
-			el: '#vcomments',
-			appId: '<%- theme.valine.appID %>',
-			appKey: '<%- theme.valine.appKey %>',
-			placeholder: '<%- theme.valine.placeholder %>',
-			path: window.location.pathname,
-			avatar: '<%- theme.valine.avatar %>',
-			highlight: false,
-      recordIP: true,
-      enableQQ: true,
-			requiredFields: ['nick','mail']
-		})
+            <script>
+	<% if (theme.valine && theme.valine.enableComment) { %>
+                // 评论
+                new Valine({
+                  el: '#vcomments',
+                  appId: '<%- theme.valine.appID %>',
+                  appKey: '<%- theme.valine.appKey %>',
+                  placeholder: '<%- theme.valine.placeholder %>',
+                  path: window.location.pathname,
+                  avatar: '<%- theme.valine.avatar %>',
+                  highlight: false,
+                  recordIP: true,
+                  enableQQ: true,
+                  requiredFields: ['nick', 'mail']
+                })
+                <% } %>
+	<% if (theme.valine && theme.valine.enableCounter) { %>
+                // 显示次数
+                function showTime(Counter) {
+                  var query = new AV.Query("Counter");
+                  if ($(".leancloud_visitors").length > 0) {
+                    var url = $(".leancloud_visitors").attr('id').trim();
+                    // where field
+                    query.equalTo("words", url);
+                    // count
+                    query.count().then(function (number) {
+                      // There are number instances of MyClass where words equals url.
+                      $(document.getElementById(url)).text(number ? number : '--');
+                    }, function (error) {
+                      // error is an instance of AVError.
+                    });
+                  }
+                }
+                // 追加pv
+                function addCount(Counter) {
+                  var url = $(".leancloud_visitors").length > 0 ? $(".leancloud_visitors").attr('id').trim() : 'wujun234.github.io';
+                  var Counter = AV.Object.extend("Counter");
+                  var query = new Counter;
+                  query.save({
+                    words: url
+                  }).then(function (object) {
+                  })
+                }
+                $(function () {
+                  var Counter = AV.Object.extend("Counter");
+                  addCount(Counter);
+                  showTime(Counter);
+                });
 	<% } %>
-	<% if (theme.valine && theme.valine.enableCounter){ %>
-    // 显示次数
-		function showTime(Counter) {
-			var query = new AV.Query("Counter");
-			if($(".leancloud_visitors").length > 0){
-				var url = $(".leancloud_visitors").attr('id').trim();
-				// where field
-				query.equalTo("words", url);
-				// count
-				query.count().then(function (number) {
-					// There are number instances of MyClass where words equals url.
-					$(document.getElementById(url)).text(number?  number : '--');
-				}, function (error) {
-					// error is an instance of AVError.
-				});
-			}
-		}
-		// 追加pv
-		function addCount(Counter) {
-			var url = $(".leancloud_visitors").length > 0 ? $(".leancloud_visitors").attr('id').trim() : 'wujun234.github.io';
-			var Counter = AV.Object.extend("Counter");
-			var query = new Counter;
-			query.save({
-				words: url
-			}).then(function (object) {
-			})
-		}
-		$(function () {
-			var Counter = AV.Object.extend("Counter");
-			addCount(Counter);
-			showTime(Counter);
-		});
-	<% } %>
-</script>
+            </script>
+
+            <div class="share-button-container">
+              <link rel="stylesheet" type="text/css" href="/css/pach-post.css">
+              <a href="<%- theme.test %>">
+                <button class="jump-button">点击跳转</button>
+              </a>
+
+              <!-- 分享按钮 -->
+              <button class="share-button" onclick="generateAndCopyLink()">分享本文！</button>
+            </div>
+            <link rel="stylesheet" type="text/css" href="/css/pach-post.css">
+
+
+            <!-- JavaScript 函数定义 -->
+            <script>
+                // 生成链接并复制到剪贴板的函数
+                function generateAndCopyLink() {
+                  // 获取博客名、文章标题和当前文章链接
+                  var blogNameElement = document.getElementById('title');
+
+                  // 检查是否找到博客名元素
+                  if (!blogNameElement) {
+                    console.error('未找到博客名元素！');
+                    return;
+                  }
+
+                  // 提取博客名
+                  var blogName = blogNameElement.innerText.trim();
+
+                  var postTitleElement = document.getElementById('article-title');
+
+                  // 检查是否找到文章标题元素
+                  if (!postTitleElement) {
+                    console.error('未找到文章标题元素！');
+                    return;
+                  }
+
+                  // 提取纯文本标题内容
+                  var postTitle = postTitleElement.innerText.trim();
+
+                  var postUrl = window.location.href; // 获取当前文章链接
+
+                  // 构建分享文本
+                  var shareText = blogName + ' - ' + postTitle + ' - ' + postUrl;
+
+                  // 创建一个文本区域元素
+                  var textarea = document.createElement('textarea');
+                  textarea.value = shareText;
+
+                  // 将文本区域元素添加到DOM中
+                  document.body.appendChild(textarea);
+
+                  // 选中文本
+                  textarea.select();
+
+                  // 尝试执行复制操作
+                  try {
+                    var successful = document.execCommand('copy');
+                    if (successful) {
+                      // 复制成功时显示弹窗提示
+                      showCopySuccessPopup();
+                      console.info('链接已生成并复制成功！', shareText);
+                    } else {
+                      console.error('链接生成失败或复制失败！');
+                    }
+                  } catch (err) {
+                    console.error('链接生成失败或复制失败！', err);
+                  }
+
+                  // 移除文本区域元素
+                  document.body.removeChild(textarea);
+                }
+
+              // 显示复制成功弹窗
+              function showCopySuccessPopup() {
+                var popup = document.createElement('div');
+                popup.textContent = '链接已复制成功！';
+                popup.style.position = 'fixed';
+                popup.style.top = '50%';
+                popup.style.left = '50%';
+                popup.style.transform = 'translate(-50%, -50%)';
+                popup.style.padding = '10px';
+                popup.style.backgroundColor = '#2b6963';
+                popup.style.color = '#b0decf';
+                popup.style.borderRadius = '5px';
+                popup.style.zIndex = '1000';
+
+                document.body.appendChild(popup);
+
+                // 3秒后移除弹窗
+                setTimeout(function () {
+                  document.body.removeChild(popup);
+                }, 3000);
+              }
+            </script>

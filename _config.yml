@@ -78,7 +78,10 @@ sidebar:
   # usePostTitle 为 ture 用文章名，不填或为 false 用文件名
   usePostTitle: ture
 
-  # 背景图片，仅支持URL
+
+
+
+ # 背景图片，仅支持URL
 blogBackgroundImage: 
   # 你可以根据需要选择 'cover', 'contain' 或其他值
 blogBackgroundSize: 'cover'  
@@ -89,3 +92,10 @@ blurAmount: 10px
 custom:
   enableRuntimeCard: ture
   siteStartDate: "2023-06-12"
+
+#一个有问题无法再配置文件更改的功能
+#share:
+#  button: ture 
+#  time: 1000
+
+test: https://afdian.net/a/awaae001

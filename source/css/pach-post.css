@@ -1,0 +1,32 @@
+ /* 公共样式 */
+ .share-button-container {
+  display: flex;
+  /* 使用 flex 布局，使按钮水平排列 */
+  gap: 20px;
+  /* 设置按钮之间的间距，可以根据需要调整 */
+}
+
+.share-button-container button {
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+/* 跳转按钮样式 */
+.jump-button {
+  background-color: #2b6963;
+  color: #b0decf;
+}
+
+/* 分享按钮样式 */
+.share-button {
+  background-color: #2b6963;
+  color: #b0decf;
+}
+
+/* 鼠标悬停样式 */
+.share-button-container button:hover {
+  cursor: pointer;
+}
