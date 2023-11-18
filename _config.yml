@@ -98,4 +98,7 @@ custom:
 #  button: ture 
 #  time: 1000
 
-test: https://afdian.net/a/awaae001
+like:
+  buttonOne: 赞助链接！
+  buttonTwo: 分享本文！
+  link: https://afdian.net/a/awaae001
