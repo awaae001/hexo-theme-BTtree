@@ -1,41 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Blog Title</title>
-
-<!-- layout.ejs -->
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Blog Title</title>
-
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            position: relative;
-        }
-
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background-image: url('<%- theme.blogBackgroundImage %>');
-            background-size: <%- theme.blogBackgroundSize %>;
-            filter: blur(<%- theme.blurAmount %>);
-    </style>
-</head>
-
-
-<body>
     <div id="index">
         <% page.posts.each(function(post){ %>
             <!-- 博客文章列表项 -->

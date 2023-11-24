@@ -68,4 +68,25 @@
 		<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 	<% } %>
 
+
+	<style>
+		body {
+		  margin: 0;
+		  padding: 0;
+		  position: relative;
+		}
+	
+		body::before {
+		  content: "";
+		  position: fixed;
+		  top: 0;
+		  left: 0;
+		  width: 100%;
+		  height: 100%;
+		  z-index: -1;
+		  background-image: url('<%- theme.blogBackgroundImage %>');
+		  background-size: <%- theme.blogBackgroundSize %>;
+		  filter: blur(<%- theme.blurAmount %>);
+	  </style>
+
 </head>
