@@ -5,8 +5,31 @@
 	border: 0;
 }
 
+
+
+
 html{
 	font-family: microsoft yahei,helvetica,simhei,simsun,sans-serif;
+}
+
+
+/** 网站的黑暗模式配色 **/
+@media (prefers-color-scheme: dark) {
+	html {
+		background-color: rgb(24, 28, 39);
+
+		body {
+			color: rgb(201, 209, 217);
+		}
+
+		h1 {
+			color: rgb(201, 209, 217);
+		}
+
+		h2 {
+			color: rgb(201, 209, 217);
+		}
+	}
 }
 
 a {
@@ -101,6 +124,24 @@ a {
 	background: #41555d;
 	z-index: 99;
 }
+
+/** 网站的黑暗模式配色 **/
+@media (prefers-color-scheme: dark) {
+
+	#sidebar {
+		position: fixed;
+		flex-grow: 1;
+		flex-shrink: 1;
+		flex-basis: 0;
+		width: 250px;
+		left: -250px;
+		height: 100%;
+		top: 0px;
+		background: #283439;
+		z-index: 99;
+	}
+}
+
 #sidebar.on {
   left: 0;
 }
@@ -198,6 +239,25 @@ a {
 	-o-transition: 0.5s;
 }
 /* index */
+
+.post-container {
+    display: flex; /* 使用 Flexbox 布局 */
+    align-items: center; /* 在纵向方向上居中对齐 */
+
+}
+
+.cover-image {
+    /* 这里是你想要应用于封面图片的样式 */
+    max-width: 50%; /* 保持图片响应式 */
+    border-radius: 8px; /* 可选的圆角样式 */
+    margin-right: 10px; /* 可选的右边距 */
+}
+
+.post-content {
+    flex-grow: 1; /* 扩展以填充剩余空间 */
+}
+
+
 .content{
 	max-width: 850px;
 	min-height: calc(100vh - 130px);
@@ -232,6 +292,17 @@ a {
 	font-size: 12px;
 	color: #3d3d3d;
 	padding: 0 5px 0 0;
+}
+
+/** 网站的黑暗模式配色 **/
+@media (prefers-color-scheme: dark) {
+	.article-meta * {
+		position: relative;
+		font-style: italic;
+		font-size: 12px;
+		color: rgb(166, 166, 166);
+		padding: 0 5px 0 0;
+	}
 }
 
 .index-title {
