@@ -46,6 +46,11 @@
 
 </div>
 
+<% if (page.cover) { %>
+  <img src="<%- page.cover %>" alt="Cover Image" class="page-cover-image">
+<% } %>
+
+
 <!-- content -->
 <div id="article-content">
   <%- page.content %>

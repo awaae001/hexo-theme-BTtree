@@ -13,6 +13,13 @@ html{
 }
 
 
+.page-cover-image {
+	max-width: 75%; /* 保持图片响应式 */
+	border-radius: 8px; /* 可选的圆角样式 */
+  }
+  
+
+
 /** 网站的黑暗模式配色 **/
 @media (prefers-color-scheme: dark) {
 	html {
