@@ -4,6 +4,8 @@
 
 >本主题基于[hexo-theme-tree](https://github.com/wujun234/hexo-theme-tree)魔改而来
 
+>[主题手册](https://blog.awaae001.top/posts/34026.html)
+
 ---
 目前额外功能：
 - 网站存活时间计时器
