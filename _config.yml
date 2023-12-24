@@ -91,7 +91,8 @@ blurAmount: 10px
 #页面底部的网站运行时长,注意：时间格式为 年-月-日，单数必须要要加零
 custom:
   enableRuntimeCard: ture
-  siteStartDate: "2023-06-12"
+  siteStartDate: "YYYY-MM-DD"
+  siteword: enter the Word
 
 #一个有问题无法再配置文件更改的功能
 #share:
