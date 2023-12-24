@@ -2,29 +2,33 @@
 	<p>
 		©<span id="footerYear-start"><%- theme.siteStartYear %></span>-<span id="footerYear-end"></span>
 
-		<% if (config.website){ %>
-			<a href='<%- config.website %>' target="_blank"><%- config.author %></a>
+		<p>
+			<% if (config.website){ %>
+				<a href='<%- config.website %>' target="_blank"><%- config.author %></a>
 			<% } else { %>
 				<a href="/"><%- config.author %></a>
-				<% } %>
-
-					<% if (theme.busuanzi){ %>
-						|
-						<span id="busuanzi_container_site_pv">
-							pv
-							<span id="busuanzi_value_site_pv"></span>
-						</span>
-						|
-						<span id="busuanzi_container_site_uv">
-							uv
-							<span id="busuanzi_value_site_uv"></span>
-						</span>
-						<% } %>
-							<br>
-							Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
-							by <a href="//wujun.me" target="_blank">Wu Jun</a>
-							Powered by <a href="//hexo.io" target="_blank">Hexo</a>
-	</p>
+			<% } %>
+		
+			<% if (theme.busuanzi){ %>
+				|
+				<span id="busuanzi_container_site_pv">
+					pv
+					<span id="busuanzi_value_site_pv"></span>
+				</span>
+				|
+				<span id="busuanzi_container_site_uv">
+					uv
+					<span id="busuanzi_value_site_uv"></span>
+				</span>
+			<% } %>
+			<br>
+			Theme <a href="//github.com/awaae001/hexo-theme-BTtree" target="_blank">BTTree</a>
+			by <a href="//awaae001.top" target="_blank">awaae001</a>
+			Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+			<!-- 新添加的链接 -->
+			<br>
+			<a href="https://icp.gov.moe/?keyword=" target="_blank">萌ICP备********号</a>
+		</p>
 
 	<!-- 一段用于在页底显示运行时间的代码 by:awaae001 -->
 	<% if (theme.custom.enableRuntimeCard) { %>
