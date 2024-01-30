@@ -124,14 +124,14 @@ a {
 	height: 45px;
 	width: 45px;
 	border-radius: 50%;
-	background-color: rgb(0 0 0 / 43%);
+	background-color: rgba(0, 0, 0, 0.5);
 	color: #fff;
 	transition: all 0.3s ease-in-out;
-	backdrop-filter: blur(8px);
+	opacity: 0.5;
 }
 
 .toggle:hover {
-	opacity: .7;
+	opacity: 1;
 }
 
 #sidebar {
@@ -143,7 +143,7 @@ a {
 	left: -250px;
 	height: 100%;
 	top: 0px;
-	background: #28645f;
+	background: #41555d;
 	z-index: 99;
 }
 
@@ -178,10 +178,9 @@ a {
 	height: 35px;
 	margin: 5px 10px 5px 10px;
 	border-radius: 5px;
-	background: #3f44488a;
+	background: #3f4448;
 	text-indent: 20px;
-	color: #94ab95;
-  backdrop-filter: blur(50px);
+	color: #64cfff;
 }
 
 .sidebar-toc {
@@ -235,17 +234,12 @@ a {
 }
 
 #sidebar ul li a {
-  color: #b0ddce;
-  font-size: 14px;
-  transition: .3s;
-  -webkit-transition: .3s;
-  -moz-transition: .3s;
-  -ms-transition: .3s;
-  -o-transition: .3s;
+	color: #999;
+	font-size: 14px;
 }
 
 #sidebar ul li a:hover {
-	color: #94cf97;
+	color: #ccc;
 	border-bottom: 1px solid #ccc;
 }
 
@@ -348,7 +342,6 @@ a {
 	font-size: 12px;
 	color: #3d3d3d;
 	padding: 0 5px 0 0;
-  text-align: right;
 }
 
 /** 网站的黑暗模式配色 **/
@@ -551,13 +544,13 @@ table td {
 #footer {
 	font-size: 14px;
 	/*height: 50px;*/
-	background-color: #2b6964;
-	color: #fff;
+	background-color: #60281e;
+	color: #dfb7b7;
 	text-align: center;
 }
 
 #footer a {
-  color: #5aa98d;
+	color: #fff;
 }
 
 #footer p {
