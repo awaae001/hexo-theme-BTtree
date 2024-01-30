@@ -4,6 +4,7 @@
   /* 使用 flex 布局，使按钮水平排列 */
   gap: 20px;
   /* 设置按钮之间的间距，可以根据需要调整 */
+  padding-top: 0.7rem;
 }
 
 .share-button-container button {
