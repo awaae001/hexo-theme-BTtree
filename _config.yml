@@ -54,6 +54,16 @@ valine:
   placeholder: 请输入评论
   avatar: retro
 
+# 可选 waline评论系统
+#https://waline.js.org/
+#是上面的valine的有服务器后端版本，在现在的环境下可用。
+waline:
+  #评论系统开关
+  enableComment: true	
+  #服务器地址
+  serverURL: Your-sever.URL
+
+
 # 是否开启“不蒜子”统计访问量，可选
 busuanzi: false
 
