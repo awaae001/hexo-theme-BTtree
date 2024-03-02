@@ -679,3 +679,14 @@ table td {
 		opacity: 0.95;
 	}
 }
+
+
+span.space {
+	color: #0c0807;
+}
+
+@media (prefers-color-scheme: dark) {
+	span.space {
+		color: rgb(201, 209, 217);
+	}
+}
