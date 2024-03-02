@@ -4,31 +4,17 @@
 	border: 0;
 }
 
-
-
-
-html {
-	font-family: microsoft yahei, helvetica, simhei, simsun, sans-serif;
-}
-
-
 .page-cover-image {
+	/* 封面图片样式 */
 	max-width: 75%;
-	/* 保持图片响应式 */
 	border-radius: 8px;
-	/* 可选的圆角样式 */
 }
-
 
 
 /** 网站的黑暗模式配色 **/
 @media (prefers-color-scheme: dark) {
 	html {
 		background-color: rgb(24, 28, 39);
-
-		body {
-			color: rgb(201, 209, 217);
-		}
 	}
 }
 
@@ -64,11 +50,30 @@ a {
 	width: 100%;
 	height: 50px;
 	background: #2b6964;
+	/* 顶部拦css */
 	z-index: 98;
 	display: flex;
 	align-items: baseline;
 	justify-content: space-between;
 	box-shadow: 0 4px 1px rgba(0, 0, 0, 0.15);
+}
+
+/** 网站的黑暗模式配色 **/
+@media (prefers-color-scheme: dark) {
+
+	#header {
+		position: fixed;
+		top: 0px;
+		width: 100%;
+		height: 50px;
+		background: #183a37;
+		/* 顶部拦css */
+		z-index: 98;
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		box-shadow: 0 4px 1px rgba(0, 0, 0, 0.15);
+	}
 }
 
 #title {
@@ -278,22 +283,49 @@ a {
 	/* 使用 Flexbox 布局 */
 	align-items: center;
 	/* 在纵向方向上居中对齐 */
-
 }
 
 .cover-image {
-	/* 这里是你想要应用于封面图片的样式 */
 	max-width: 50%;
 	/* 保持图片响应式 */
 	border-radius: 8px;
 	/* 可选的圆角样式 */
-	margin-right: 10px;
-	/* 可选的右边距 */
 }
 
 .post-content {
 	flex-grow: 1;
 	/* 扩展以填充剩余空间 */
+}
+
+/* index */
+
+.index-post-container {
+	display: flex;
+	align-items: center;
+	/* 垂直居中 */
+}
+
+.index-cover-image {
+	max-width: 45%;
+	/* 保持图片响应式 */
+	border-radius: 8px;
+	/* 可选的圆角样式 */
+	margin-right: 10px;
+	/* 可选的右边距，用于调整封面图片与标题之间的间距 */
+}
+
+.index-post-content {
+	flex: 1;
+	/* 填充剩余空间 */
+}
+
+/* 移动设备样式 */
+
+@media only screen and (max-width: 600px) {
+	.index-cover-image {
+		display: none;
+		/* 隐藏封面图片 */
+	}
 }
 
 
@@ -332,7 +364,7 @@ a {
 	position: relative;
 	font-style: italic;
 	font-size: 12px;
-	color: #3d3d3d;
+	color: rgb(49, 49, 49);
 	padding: 0 5px 0 0;
 }
 
@@ -353,6 +385,14 @@ a {
 	font-size: 24px;
 }
 
+@media (prefers-color-scheme: dark) {
+	.index-title {
+		margin-top: 30px;
+		position: relative;
+		font-size: 24px;
+		color: rgb(201, 209, 217);
+	}
+}
 
 #index-paginator {
 	display: flex;
@@ -387,6 +427,14 @@ a {
 	border-bottom: 2px solid #ddd;
 }
 
+@media (prefers-color-scheme: dark) {
+	#article-title {
+		border-bottom: 2px solid #ddd;
+		color: rgb(201, 209, 217);
+	}
+}
+
+
 #article-content {
 	padding: 10px 0;
 	border-bottom: 2px solid #ddd;
@@ -402,6 +450,13 @@ a {
 	margin: 5px 0;
 }
 
+@media (prefers-color-scheme: dark) {
+	#article-content li {
+		margin: 5px 0;
+		color: rgb(201, 209, 217);
+	}
+}
+
 #article-content h1 {
 	line-height: 50px;
 	margin: 20px 0 15px;
@@ -410,12 +465,35 @@ a {
 	border-bottom: 2px solid #ddd;
 }
 
+@media (prefers-color-scheme: dark) {
+	#article-content h1 {
+		line-height: 50px;
+		margin: 20px 0 15px;
+		font-size: 32px;
+		padding-bottom: 10px;
+		border-bottom: 2px solid #ddd;
+		color: rgb(201, 209, 217);
+	}
+}
+
 #article-content h2 {
 	line-height: 45px;
 	margin: 15px 0 10px;
 	font-size: 25px;
 	padding-left: 10px;
 	border-bottom: 1px solid #ddd;
+
+}
+
+@media (prefers-color-scheme: dark) {
+	#article-content h2 {
+		line-height: 45px;
+		margin: 15px 0 10px;
+		font-size: 25px;
+		padding-left: 10px;
+		border-bottom: 1px solid #ddd;
+		color: rgb(201, 209, 217);
+	}
 }
 
 #article-content h3 {
@@ -424,11 +502,31 @@ a {
 	font-size: 22px
 }
 
+@media (prefers-color-scheme: dark) {
+	#article-content h3 {
+		line-height: 40px;
+		margin: 10px 0 5px;
+		color: rgb(201, 209, 217);
+		font-size: 22px
+	}
+}
+
 #article-content h4,
 #article-content h5,
 #article-content h6 {
 	line-height: 35px;
 	margin: 5px 0 5px;
+}
+
+@media (prefers-color-scheme: dark) {
+
+	#article-content h4,
+	#article-content h5,
+	#article-content h6 {
+		line-height: 35px;
+		margin: 5px 0 5px;
+		color: rgb(201, 209, 217);
+	}
 }
 
 #article-content a:hover {
@@ -460,6 +558,15 @@ a {
 	margin-bottom: 10px;
 }
 
+@media (prefers-color-scheme: dark) {
+	#article-content p {
+		line-height: 20px;
+		color: rgb(201, 209, 217);
+		margin-bottom: 10px;
+	}
+}
+
+
 #article-content ul code,
 #article-content ol code,
 #article-content p code {
@@ -479,6 +586,22 @@ table {
 	text-align: left;
 	border: 1px solid black;
 }
+
+@media (prefers-color-scheme: dark) {
+	table {
+		margin: auto auto 15px;
+		width: 100%;
+		min-height: .01%;
+		overflow-x: auto;
+		background: transparent;
+		border-collapse: collapse;
+		border-spacing: 0;
+		text-align: left;
+		border: 1px solid black;
+		color: rgb(201, 209, 217);
+	}
+}
+
 
 table th {
 	font-weight: bold;
