@@ -4,6 +4,21 @@
 
 <!-- meta -->
 <div class="article-meta">
+
+  <% if (page.cc) {%>
+    <div class="meta-cc">
+      <p class="meta-p">
+        温馨提示：本文适用于
+      </p>
+      <p class="meta-p">
+        <a href="https://creativecommons.org/licenses/by-nc/4.0/legalcode.zh-hans" target="_blank">署名-非商业性使用(BY-NC)</a>
+      </p>
+      <p class="meta-p2">
+        禁止商用-转载请标注出处
+      </p>
+    </div>
+    <%}%>
+
   <% if (theme.valine && theme.valine.enableCounter){ %>
     <span>
       阅读量:<span id="<%= url_for(page.path) %>" class="leancloud_visitors" data-flag-title="<%- page.title %>"></span>

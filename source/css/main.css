@@ -368,6 +368,50 @@ a {
 	padding: 0 5px 0 0;
 }
 
+
+.meta-cc {
+	-webkit-text-size-adjust: 100%;
+	--body-bg-color: #eee;
+	--content-bg-color: #fff;
+	--card-bg-color: #f5f5f5;
+	--text-color: #000000;
+	color: var(--text-color);
+	line-height: 1.5;
+	padding: .5em 1em;
+	position: relative;
+	background: var(--card-bg-color);
+	border-left: 3px solid #ff2a2a;
+	margin: 1em 0 0;
+	border-radius: 5px;
+}
+
+p.meta-p {
+	margin: 0px 10px;
+}
+
+p.meta-p2 {
+	margin: 0px 10px;
+	font-size: 20PX;
+}
+
+/** 网站的黑暗模式配色 [对，这一长串带@media的都是！] **/
+@media (prefers-color-scheme: dark) {
+	.meta-cc {
+		-webkit-text-size-adjust: 100%;
+		--content-bg-color: #fff;
+		--card-bg-color: rgb(44, 47, 55);
+		--text-color: rgba(201, 209, 217);
+		color: var(--text-color);
+		line-height: 1.5;
+		padding: .5em 1em;
+		position: relative;
+		background: var(--card-bg-color);
+		border-left: 3px solid #ff2a2a;
+		margin: 1em 0 0;
+		border-radius: 5px;
+	}
+}
+
 /** 网站的黑暗模式配色 **/
 @media (prefers-color-scheme: dark) {
 	.article-meta * {
